@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://assets/idk.tres" type="TileSet" id=1]
+[ext_resource path="res://src/city/City.gd" type="Script" id=2]
+[ext_resource path="res://assets/images/unlock_grass.png" type="Texture" id=3]
+[ext_resource path="res://src/Camera.gd" type="Script" id=4]
+
+[node name="Map" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="TileMap" type="TileMap" parent="."]
+mode = 1
+tile_set = ExtResource( 1 )
+cell_size = Vector2( 64, 32 )
+cell_custom_transform = Transform2D( 0, 0, 0, 0, 0, 0 )
+cell_tile_origin = 2
+format = 1
+
+[node name="Unlocks" type="Node2D" parent="."]
+
+[node name="UnlockSprite" type="Sprite" parent="Unlocks"]
+visible = false
+modulate = Color( 1, 1, 1, 0.537255 )
+texture = ExtResource( 3 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+current = true
+script = ExtResource( 4 )
